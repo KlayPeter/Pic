@@ -1,188 +1,210 @@
-<mxfile host="app.diagrams.net" modified="2025-04-22T12:00:00.000Z" agent="Mozilla/5.0" etag="example-etag" version="21.4.0" type="device">
+<mxfile host="app.diagrams.net" modified="2025-04-22T12:00:00.000Z" version="21.4.0" type="device">
   <diagram id="ai-cms-system-architecture" name="AI+CMS系统结构图">
     <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
         <!-- Main Container -->
-        <mxCell id="main-container" value="AI+CMS系统总结构" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="40" y="40" width="760" height="720" as="geometry" />
+        <mxCell id="main-container" value="AI+CMS系统总结构" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="760" height="720" as="geometry"/>
         </mxCell>
         
         <!-- Backend Management System -->
-        <mxCell id="backend" value="后台管理系统 🛠" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#FFCDD2;" vertex="1" parent="1">
-          <mxGeometry x="60" y="80" width="360" height="340" as="geometry" />
+        <mxCell id="backend" value="后台管理系统 🛠" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#FFCDD2;" parent="1" vertex="1">
+          <mxGeometry x="60" y="80" width="360" height="340" as="geometry"/>
         </mxCell>
         
-        <!-- Page Creation Module -->
-        <mxCell id="page-creation" value="单页创建模块" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="backend">
-          <mxGeometry x="20" y="40" width="320" height="140" as="geometry" />
+        <mxCell id="page-creation" value="单页创建模块" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;" parent="backend" vertex="1">
+          <mxGeometry x="20" y="40" width="320" height="140" as="geometry"/>
         </mxCell>
-        <mxCell id="nav-page" value="导航单页创建" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-creation">
-          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        
+        <mxCell id="nav-page" value="导航单页创建" style="rounded=1;whiteSpace=wrap;" parent="page-creation" vertex="1">
+          <mxGeometry y="30" width="160" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="landing-page" value="落地单页创建（模块拼装+富文本+拖拽）" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-creation">
-          <mxGeometry y="60" width="320" height="30" as="geometry" />
+        
+        <mxCell id="landing-page" value="落地单页创建（模块拼装+富文本+拖拽）" style="rounded=1;whiteSpace=wrap;" parent="page-creation" vertex="1">
+          <mxGeometry y="60" width="320" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="rss-page" value="RSS单页创建（输入RSS链接，聚合展示）" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-creation">
-          <mxGeometry y="90" width="320" height="30" as="geometry" />
+        
+        <mxCell id="rss-page" value="RSS单页创建（输入RSS链接，聚合展示）" style="rounded=1;whiteSpace=wrap;" parent="page-creation" vertex="1">
+          <mxGeometry y="90" width="320" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="ai-page" value="AI单页创建（自然语言生成结构化页面）" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-creation">
-          <mxGeometry x="160" y="30" width="160" height="30" as="geometry" />
+        
+        <mxCell id="ai-page" value="AI单页创建（自然语言生成结构化页面）" style="rounded=1;whiteSpace=wrap;" parent="page-creation" vertex="1">
+          <mxGeometry x="160" y="30" width="160" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="custom-page" value="自定义单页创建（支持HTML/Markdown/JSON）" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-creation">
-          <mxGeometry y="120" width="320" height="20" as="geometry" />
+        
+        <mxCell id="custom-page" value="自定义单页创建（支持HTML/Markdown/JSON）" style="rounded=1;whiteSpace=wrap;" parent="page-creation" vertex="1">
+          <mxGeometry y="120" width="320" height="20" as="geometry"/>
         </mxCell>
         
         <!-- Page Management Module -->
-        <mxCell id="page-management" value="页面管理模块" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="backend">
-          <mxGeometry x="20" y="190" width="320" height="60" as="geometry" />
+        <mxCell id="page-management" value="页面管理模块" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;" parent="backend" vertex="1">
+          <mxGeometry x="20" y="190" width="320" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="path-management" value="统一路径管理：预览/编辑/删除/发布" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-management">
-          <mxGeometry y="30" width="320" height="30" as="geometry" />
+        
+        <mxCell id="path-management" value="统一路径管理：预览/编辑/删除/发布" style="rounded=1;whiteSpace=wrap;" parent="page-management" vertex="1">
+          <mxGeometry y="30" width="320" height="30" as="geometry"/>
         </mxCell>
         
         <!-- Page Config Module -->
-        <mxCell id="page-config" value="页面配置模块" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="backend">
-          <mxGeometry x="20" y="260" width="160" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="homepage-settings" value="首页跳转设置" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-config">
-          <mxGeometry y="30" width="160" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="navbar-config" value="导航栏配置" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-config">
-          <mxGeometry y="50" width="160" height="20" as="geometry" />
+        <mxCell id="page-config" value="页面配置模块" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;" parent="backend" vertex="1">
+          <mxGeometry x="20" y="260" width="160" height="70" as="geometry"/>
         </mxCell>
         
-        <!-- Theme Config -->
-        <mxCell id="theme-config" value="主题配置（字体、配色风格）" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="backend">
-          <mxGeometry x="190" y="290" width="150" height="20" as="geometry" />
+        <mxCell id="homepage-settings" value="首页跳转设置" style="rounded=1;whiteSpace=wrap;" parent="page-config" vertex="1">
+          <mxGeometry y="30" width="160" height="20" as="geometry"/>
         </mxCell>
-        <mxCell id="plugin-interface" value="插件扩展接口" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="backend">
-          <mxGeometry x="190" y="310" width="150" height="20" as="geometry" />
+        
+        <mxCell id="navbar-config" value="导航栏配置" style="rounded=1;whiteSpace=wrap;" parent="page-config" vertex="1">
+          <mxGeometry y="50" width="160" height="20" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="theme-config" value="主题配置（字体、配色风格）" style="rounded=1;whiteSpace=wrap;" parent="backend" vertex="1">
+          <mxGeometry x="190" y="290" width="150" height="20" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="plugin-interface" value="插件扩展接口" style="rounded=1;whiteSpace=wrap;" parent="backend" vertex="1">
+          <mxGeometry x="190" y="310" width="150" height="20" as="geometry"/>
         </mxCell>
         
         <!-- AI Assistant Module -->
-        <mxCell id="ai-assistant" value="AI助手模块" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" vertex="1" parent="backend">
-          <mxGeometry x="190" y="260" width="150" height="30" as="geometry" />
+        <mxCell id="ai-assistant" value="AI助手模块" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;" parent="backend" vertex="1">
+          <mxGeometry x="190" y="260" width="150" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="llm-api" value="导入大语言模型API" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="backend">
-          <mxGeometry x="190" y="330" width="75" height="30" as="geometry" />
+        
+        <mxCell id="llm-api" value="导入大语言模型API" style="rounded=1;whiteSpace=wrap;" parent="backend" vertex="1">
+          <mxGeometry x="190" y="330" width="75" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="prompt-template" value="设置提示词角色模板" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="backend">
-          <mxGeometry x="265" y="330" width="75" height="30" as="geometry" />
+        
+        <mxCell id="prompt-template" value="设置提示词角色模板" style="rounded=1;whiteSpace=wrap;" parent="backend" vertex="1">
+          <mxGeometry x="265" y="330" width="75" height="30" as="geometry"/>
         </mxCell>
         
         <!-- AI Service Module -->
-        <mxCell id="ai-service" value="AI服务模块 🤖" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#BBDEFB;" vertex="1" parent="1">
-          <mxGeometry x="60" y="440" width="240" height="90" as="geometry" />
+        <mxCell id="ai-service" value="AI服务模块 🤖" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#BBDEFB;" parent="1" vertex="1">
+          <mxGeometry x="60" y="440" width="240" height="90" as="geometry"/>
         </mxCell>
-        <mxCell id="process-ai-requests" value="接收AI单页创建请求" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ai-service">
-          <mxGeometry y="30" width="240" height="30" as="geometry" />
+        
+        <mxCell id="process-ai-requests" value="接收AI单页创建请求" style="rounded=1;whiteSpace=wrap;" parent="ai-service" vertex="1">
+          <mxGeometry y="30" width="240" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="return-structured-content" value="返回结构化HTML/CSS内容" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ai-service">
-          <mxGeometry y="60" width="240" height="30" as="geometry" />
+        
+        <mxCell id="return-structured-content" value="返回结构化HTML/CSS内容" style="rounded=1;whiteSpace=wrap;" parent="ai-service" vertex="1">
+          <mxGeometry y="60" width="240" height="30" as="geometry"/>
         </mxCell>
         
         <!-- User System -->
-        <mxCell id="user-system" value="用户系统 🔒" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#C8E6C9;" vertex="1" parent="1">
-          <mxGeometry x="60" y="550" width="240" height="90" as="geometry" />
+        <mxCell id="user-system" value="用户系统 🔒" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#C8E6C9;" parent="1" vertex="1">
+          <mxGeometry x="60" y="550" width="240" height="90" as="geometry"/>
         </mxCell>
-        <mxCell id="account-login" value="后台账号登录" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="user-system">
-          <mxGeometry y="30" width="120" height="30" as="geometry" />
+        
+        <mxCell id="account-login" value="后台账号登录" style="rounded=1;whiteSpace=wrap;" parent="user-system" vertex="1">
+          <mxGeometry y="30" width="120" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="permission-verification" value="权限验证" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="user-system">
-          <mxGeometry y="60" width="120" height="30" as="geometry" />
+        
+        <mxCell id="permission-verification" value="权限验证" style="rounded=1;whiteSpace=wrap;" parent="user-system" vertex="1">
+          <mxGeometry y="60" width="120" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="backend-access" value="进入后台功能界面" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="user-system">
-          <mxGeometry x="120" y="30" width="120" height="60" as="geometry" />
+        
+        <mxCell id="backend-access" value="进入后台功能界面" style="rounded=1;whiteSpace=wrap;" parent="user-system" vertex="1">
+          <mxGeometry x="120" y="30" width="120" height="60" as="geometry"/>
         </mxCell>
         
         <!-- Frontend Display System -->
-        <mxCell id="frontend" value="前端展示系统 🌐" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#FFE0B2;" vertex="1" parent="1">
-          <mxGeometry x="440" y="80" width="340" height="120" as="geometry" />
+        <mxCell id="frontend" value="前端展示系统 🌐" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#FFE0B2;" parent="1" vertex="1">
+          <mxGeometry x="440" y="80" width="340" height="120" as="geometry"/>
         </mxCell>
-        <mxCell id="path-router" value="页面路径路由解析（如/about, /landing）" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="frontend">
-          <mxGeometry y="30" width="340" height="30" as="geometry" />
+        
+        <mxCell id="path-router" value="页面路径路由解析（如/about, /landing）" style="rounded=1;whiteSpace=wrap;" parent="frontend" vertex="1">
+          <mxGeometry y="30" width="340" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="rendering-engine" value="页面渲染引擎（展示生成的页面内容）" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="frontend">
-          <mxGeometry y="60" width="340" height="30" as="geometry" />
+        
+        <mxCell id="rendering-engine" value="页面渲染引擎（展示生成的页面内容）" style="rounded=1;whiteSpace=wrap;" parent="frontend" vertex="1">
+          <mxGeometry y="60" width="340" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="theme-renderer" value="主题样式自动渲染（根据后台设置应用UI风格）" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="frontend">
-          <mxGeometry y="90" width="340" height="30" as="geometry" />
+        
+        <mxCell id="theme-renderer" value="主题样式自动渲染（根据后台设置应用UI风格）" style="rounded=1;whiteSpace=wrap;" parent="frontend" vertex="1">
+          <mxGeometry y="90" width="340" height="30" as="geometry"/>
         </mxCell>
         
         <!-- Data Storage Module -->
-        <mxCell id="data-storage" value="数据存储模块 📁" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#D1C4E9;" vertex="1" parent="1">
-          <mxGeometry x="440" y="220" width="340" height="120" as="geometry" />
+        <mxCell id="data-storage" value="数据存储模块 📁" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#D1C4E9;" parent="1" vertex="1">
+          <mxGeometry x="440" y="220" width="340" height="120" as="geometry"/>
         </mxCell>
-        <mxCell id="page-data" value="页面结构数据（按路径存储）" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="data-storage">
-          <mxGeometry y="30" width="340" height="30" as="geometry" />
+        
+        <mxCell id="page-data" value="页面结构数据（按路径存储）" style="rounded=1;whiteSpace=wrap;" parent="data-storage" vertex="1">
+          <mxGeometry y="30" width="340" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="user-data" value="用户账号数据（用于权限控制）" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="data-storage">
-          <mxGeometry y="60" width="340" height="30" as="geometry" />
+        
+        <mxCell id="user-data" value="用户账号数据（用于权限控制）" style="rounded=1;whiteSpace=wrap;" parent="data-storage" vertex="1">
+          <mxGeometry y="60" width="340" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="config-data" value="页面配置数据（如导航结构、主题）" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="data-storage">
-          <mxGeometry y="90" width="170" height="30" as="geometry" />
+        
+        <mxCell id="config-data" value="页面配置数据（如导航结构、主题）" style="rounded=1;whiteSpace=wrap;" parent="data-storage" vertex="1">
+          <mxGeometry y="90" width="170" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="ai-cache" value="AI缓存内容（生成记录与版本）" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="data-storage">
-          <mxGeometry x="170" y="90" width="170" height="30" as="geometry" />
+        
+        <mxCell id="ai-cache" value="AI缓存内容（生成记录与版本）" style="rounded=1;whiteSpace=wrap;" parent="data-storage" vertex="1">
+          <mxGeometry x="170" y="90" width="170" height="30" as="geometry"/>
         </mxCell>
         
         <!-- Connections/Relationships -->
-        <mxCell id="backend-to-ai" value="发送页面&#xa;创建请求" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="backend" target="ai-service">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="backend-to-ai" value="发送页面创建请求" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;" parent="1" source="backend" target="ai-service" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
         
-        <mxCell id="ai-to-backend" value="返回生成&#xa;的内容" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="ai-service" target="backend">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ai-to-backend" value="返回生成的内容" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;" parent="1" source="ai-service" target="backend" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
         
-        <mxCell id="user-to-backend" value="验证身份并&#xa;授予访问权限" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="user-system" target="backend">
+        <mxCell id="user-to-backend" value="验证身份并授予访问权限" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;" parent="1" source="user-system" target="backend" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="180" y="530" />
-              <mxPoint x="150" y="530" />
+              <mxPoint x="180" y="530"/>
+              <mxPoint x="150" y="530"/>
             </Array>
           </mxGeometry>
         </mxCell>
         
-        <mxCell id="backend-to-frontend" value="配置和&#xa;发布页面" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="backend" target="frontend">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="backend-to-frontend" value="配置和发布页面" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;" parent="1" source="backend" target="frontend" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
         
-        <mxCell id="frontend-to-data" value="读取页面数据&#xa;进行渲染" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="frontend" target="data-storage">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="frontend-to-data" value="读取页面数据进行渲染" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;" parent="1" source="frontend" target="data-storage" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
         
-        <mxCell id="backend-to-data" value="存储/检索&#xa;所有数据" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="backend" target="data-storage">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="backend-to-data" value="存储/检索所有数据" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;" parent="1" source="backend" target="data-storage" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
         
-        <mxCell id="ai-to-data" value="存储生成&#xa;的内容" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="ai-service" target="data-storage">
+        <mxCell id="ai-to-data" value="存储生成的内容" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;" parent="1" source="ai-service" target="data-storage" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="380" y="485" />
-              <mxPoint x="380" y="310" />
+              <mxPoint x="380" y="485"/>
+              <mxPoint x="380" y="310"/>
             </Array>
           </mxGeometry>
         </mxCell>
         
-        <mxCell id="aipage-to-aiservice" value="使用AI&#xa;生成页面" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ai-page" target="ai-service">
+        <mxCell id="aipage-to-aiservice" value="使用AI生成页面" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;" parent="1" source="ai-page" target="ai-service" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="40" y="125" />
-              <mxPoint x="40" y="485" />
+              <mxPoint x="40" y="125"/>
+              <mxPoint x="40" y="485"/>
             </Array>
           </mxGeometry>
         </mxCell>
         
-        <mxCell id="aiassistant-to-aiservice" value="整合并&#xa;配置" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ai-assistant" target="ai-service">
+        <mxCell id="aiassistant-to-aiservice" value="整合并配置" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;" parent="1" source="ai-assistant" target="ai-service" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="120" y="275" />
+              <mxPoint x="120" y="275"/>
             </Array>
           </mxGeometry>
         </mxCell>
+        
       </root>
     </mxGraphModel>
   </diagram>
