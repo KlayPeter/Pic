@@ -1,0 +1,80 @@
+@startuml AI+CMS系统结构图
+
+' 定义组件颜色
+skinparam rectangle {
+  BackgroundColor<<后台>> #FFCDD2
+  BackgroundColor<<AI>> #BBDEFB
+  BackgroundColor<<用户>> #C8E6C9
+  BackgroundColor<<前端>> #FFE0B2
+  BackgroundColor<<数据>> #D1C4E9
+}
+
+' 主框架
+rectangle "AI+CMS系统总结构" {
+  
+  ' 主要组件
+  rectangle "后台管理系统 🛠" as Backend <<后台>> {
+    rectangle "单页创建模块" as PageCreation {
+      rectangle "导航单页创建" as NavPage
+      rectangle "落地单页创建（模块拼装+富文本+拖拽）" as LandingPage
+      rectangle "RSS单页创建（输入RSS链接，聚合展示）" as RSSPage
+      rectangle "AI单页创建（自然语言生成结构化页面）" as AIPage
+      rectangle "自定义单页创建（支持HTML/Markdown/JSON）" as CustomPage
+    }
+    
+    rectangle "页面管理模块" as PageManagement {
+      rectangle "统一路径管理：预览/编辑/删除/发布" as PathManagement
+    }
+    
+    rectangle "页面配置模块" as PageConfig {
+      rectangle "首页跳转设置" as HomepageSettings
+      rectangle "导航栏配置（多页面跳转路径组合）" as NavBarConfig
+      rectangle "主题配置（字体、配色风格）" as ThemeConfig
+      rectangle "插件扩展接口（可后续接入额外模块）" as PluginInterface
+    }
+    
+    rectangle "AI助手模块" as AIAssistant {
+      rectangle "导入大语言模型API" as LLMAPI
+      rectangle "设置提示词角色模板（提升文案生成质量）" as PromptTemplate
+    }
+  }
+  
+  rectangle "AI服务模块 🤖" as AIService <<AI>> {
+    rectangle "接收AI单页创建请求" as ProcessAIRequests
+    rectangle "返回结构化HTML/CSS内容" as ReturnStructuredContent
+  }
+  
+  rectangle "用户系统 🔒" as UserSystem <<用户>> {
+    rectangle "后台账号登录" as AccountLogin
+    rectangle "权限验证" as PermissionVerification
+    rectangle "进入后台功能界面" as BackendAccess
+  }
+  
+  rectangle "前端展示系统 🌐" as Frontend <<前端>> {
+    rectangle "页面路径路由解析（如/about, /landing）" as PathRouter
+    rectangle "页面渲染引擎（展示生成的页面内容）" as RenderingEngine
+    rectangle "主题样式自动渲染（根据后台设置应用UI风格）" as ThemeRenderer
+  }
+  
+  rectangle "数据存储模块 📁" as DataStorage <<数据>> {
+    rectangle "页面结构数据（按路径存储）" as PageData
+    rectangle "用户账号数据（用于权限控制）" as UserData
+    rectangle "页面配置数据（如导航结构、主题）" as ConfigData
+    rectangle "AI缓存内容（生成记录与版本）" as AICache
+  }
+}
+
+' 定义关系
+Backend --> AIService : 发送页面\n创建请求
+AIService --> Backend : 返回生成\n的内容
+UserSystem --> Backend : 验证身份并\n授予访问权限
+Backend --> Frontend : 配置和\n发布页面
+Frontend --> DataStorage : 读取页面数据\n进行渲染
+Backend --> DataStorage : 存储/检索\n所有数据
+AIService --> DataStorage : 存储生成\n的内容
+
+' 连接页面创建模块和AI服务
+AIPage --> AIService : 使用AI\n生成页面
+AIAssistant --> AIService : 整合并\n配置
+
+@enduml

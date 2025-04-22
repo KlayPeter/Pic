@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.0" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+  <xmi:Documentation exporter="StarUML" exporterVersion="5.0"/>
+  <uml:Model xmi:id="Model1" name="单页管理系统">
+    <packagedElement xmi:type="uml:Package" xmi:id="Package1" name="系统流程图">
+      <packagedElement xmi:type="uml:Activity" xmi:id="Activity1" name="单页管理系统业务流程">
+        <!-- 泳道定义 -->
+        <partition xmi:id="Partition1" name="用户">
+          <node xmi:type="uml:InitialNode" xmi:id="InitialNode1" name="开始" inPartition="Partition1"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action1" name="登录后台管理页面" inPartition="Partition1"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action4" name="选择功能路径分支" inPartition="Partition1"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action5" name="创建导航单页&#xA;- 选择导航单页类型&#xA;- 输入标题、跳转路径&#xA;- 保存" inPartition="Partition1"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action7" name="创建落地单页&#xA;- 拖拽模块&#xA;- 富文本编辑&#xA;- 设置SEO参数&#xA;- 保存" inPartition="Partition1"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action9" name="创建RSS单页&#xA;- 填入RSS源地址&#xA;- 保存为/news等路径" inPartition="Partition1"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action11" name="创建AI单页&#xA;- 输入页面意图描述&#xA;- 可修改后保存" inPartition="Partition1"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action13" name="创建自定义单页&#xA;- 选择自定义单页&#xA;- 输入原始HTML/Markdown/JSON&#xA;- 保存后可直接访问" inPartition="Partition1"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action15" name="AI助手模块&#xA;- 导入大模型API&#xA;- 配置角色提示词" inPartition="Partition1"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action17" name="页面配置模块&#xA;- 设置站点主题样式&#xA;- 配置头部导航栏/侧边栏内容" inPartition="Partition1"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action21" name="用户访问https://xxx.com/xxx" inPartition="Partition1"/>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="FinalNode1" name="结束" inPartition="Partition1"/>
+        </partition>
+        
+        <partition xmi:id="Partition2" name="后台系统">
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action2" name="登录校验通过" inPartition="Partition2"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action3" name="显示功能入口:&#xA;- 页面配置&#xA;- 单页创建（多类型）&#xA;- AI 助手（配置提示词/API）" inPartition="Partition2"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action6" name="生成导航页并添加至首页菜单栏&#xA;页面管理支持：预览/编辑/删除/发布" inPartition="Partition2"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action8" name="生成结构化路径，如/landing&#xA;页面管理支持：预览/编辑/删除/发布" inPartition="Partition2"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action10" name="自动聚合内容&#xA;卡片列表展示&#xA;页面管理支持：预览/编辑/删除/发布" inPartition="Partition2"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action12" name="触发AI模型&#xA;自动生成路径，如/ai-page&#xA;页面管理支持：预览/编辑/删除/发布" inPartition="Partition2"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action14" name="实时预览渲染效果&#xA;页面管理支持：预览/编辑/删除/发布" inPartition="Partition2"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action16" name="调用AI服务&#xA;支持快速生成文案、内容片段" inPartition="Partition2"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action18" name="保存站点配置" inPartition="Partition2"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action19" name="所有单页均注册路径并保存" inPartition="Partition2"/>
+        </partition>
+        
+        <partition xmi:id="Partition3" name="AI 服务模块">
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action22" name="生成HTML/CSS页面结构" inPartition="Partition3"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action23" name="处理请求并返回结果" inPartition="Partition3"/>
+        </partition>
+        
+        <partition xmi:id="Partition4" name="前台展示系统">
+          <node xmi:type="uml:OpaqueAction" xmi:id="Action20" name="前台路由渲染、上线" inPartition="Partition4"/>
+        </partition>
+        
+        <!-- 控制流定义 -->
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow1" name="flow1" source="InitialNode1" target="Action1"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow2" name="flow2" source="Action1" target="Action2"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow3" name="flow3" source="Action2" target="Action3"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow4" name="flow4" source="Action3" target="Action4"/>
+        
+        <!-- 分支控制流 -->
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow5" name="flow5" source="Action4" target="Action5"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow6" name="flow6" source="Action5" target="Action6"/>
+        
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow7" name="flow7" source="Action4" target="Action7"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow8" name="flow8" source="Action7" target="Action8"/>
+        
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow9" name="flow9" source="Action4" target="Action9"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow10" name="flow10" source="Action9" target="Action10"/>
+        
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow11" name="flow11" source="Action4" target="Action11"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow12" name="flow12" source="Action11" target="Action12"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow13" name="flow13" source="Action12" target="Action22"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow14" name="flow14" source="Action22" target="Action12"/>
+        
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow15" name="flow15" source="Action4" target="Action13"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow16" name="flow16" source="Action13" target="Action14"/>
+        
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow17" name="flow17" source="Action4" target="Action15"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow18" name="flow18" source="Action15" target="Action16"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow19" name="flow19" source="Action16" target="Action23"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow20" name="flow20" source="Action23" target="Action16"/>
+        
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow21" name="flow21" source="Action4" target="Action17"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow22" name="flow22" source="Action17" target="Action18"/>
+        
+        <!-- 合并控制流 -->
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow23" name="flow23" source="Action6" target="Action19"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow24" name="flow24" source="Action8" target="Action19"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow25" name="flow25" source="Action10" target="Action19"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow26" name="flow26" source="Action12" target="Action19"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow27" name="flow27" source="Action14" target="Action19"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow28" name="flow28" source="Action16" target="Action19"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow29" name="flow29" source="Action18" target="Action19"/>
+        
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow30" name="flow30" source="Action19" target="Action20"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow31" name="flow31" source="Action20" target="Action21"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="ControlFlow32" name="flow32" source="Action21" target="FinalNode1"/>
+      </packagedElement>
+    </packagedElement>
+  </uml:Model>
+</xmi:XMI>

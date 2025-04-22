@@ -1,0 +1,166 @@
+@startuml
+!define DARKBLUE #2C3E50
+!define LIGHTBLUE #3498DB
+!define GREEN #27AE60
+!define YELLOW #F1C40F
+!define RED #E74C3C
+!define PURPLE #9B59B6
+!define ORANGE #E67E22
+!define GRAY #95A5A6
+!define LIGHTGRAY #ECF0F1
+!define WHITE #FFFFFF
+
+' Global styling
+skinparam BackgroundColor WHITE
+skinparam shadowing false
+skinparam DefaultFontName "Arial"
+skinparam DefaultFontSize 12
+skinparam ArrowColor DARKBLUE
+skinparam SequenceLifeLineBorderColor GRAY
+skinparam SequenceGroupBodyBackgroundColor LIGHTGRAY
+skinparam SequenceGroupBorderColor GRAY
+skinparam NoteBackgroundColor #FFF9C4
+skinparam NoteBorderColor #E6D595
+skinparam TitleFontSize 18
+
+' Custom styling for swimlanes
+skinparam swimlane {
+  BorderColor GRAY
+  BorderThickness 2
+  TitleFontColor DARKBLUE
+  TitleFontSize 14
+  BackgroundColor WHITE
+}
+
+' Custom styling for activities
+skinparam activity {
+  BackgroundColor WHITE
+  BorderColor GRAY
+  FontColor DARKBLUE
+}
+
+title **单页管理系统业务流程**
+
+|#E3F2FD|用户|
+|#E8F5E9|后台系统|
+|#F3E5F5|AI 服务模块|
+|#FFF3E0|前台展示系统|
+
+|用户|
+start
+:登录后台管理页面;
+
+|后台系统|
+#palegreen:登录校验通过;
+#palegreen:显示功能入口:\n- 页面配置\n- 单页创建（多类型）\n- AI 助手（配置提示词/API）;
+
+|用户|
+#FFECB3:选择功能路径分支;
+
+' Create parallel paths for different functions
+split
+    |用户|
+    #BBDEFB:**创建导航单页**;
+    :选择"导航单页"类型;
+    :输入标题、跳转路径（如 `/about`）;
+    :保存;
+    
+    |后台系统|
+    #E1F5FE:生成导航页并添加至首页菜单栏;
+    note right #FFF9C4: 页面管理支持：\n预览 / 编辑 / 删除 / 发布
+split again
+    |用户|
+    #C8E6C9:**创建落地单页**;
+    :拖拽模块（Banner、图文块、按钮等）;
+    :富文本编辑;
+    :设置SEO等参数;
+    :保存;
+    
+    |后台系统|
+    #E8F5E9:生成结构化路径，如 `/landing`;
+    note right #FFF9C4: 页面管理支持：\n预览 / 编辑 / 删除 / 发布
+split again
+    |用户|
+    #DCEDC8:**创建 RSS 单页**;
+    :填入 RSS 源地址;
+    
+    |后台系统|
+    #F1F8E9:自动聚合内容;
+    :卡片列表展示;
+    
+    |用户|
+    :保存为 `/news` 等路径;
+    
+    |后台系统|
+    note right #FFF9C4: 页面管理支持：\n预览 / 编辑 / 删除 / 发布
+split again
+    |用户|
+    #E1BEE7:**创建 AI 单页**;
+    :输入页面意图描述;
+    
+    |后台系统|
+    :触发 AI 模型;
+    
+    |AI 服务模块|
+    #F3E5F5:生成 HTML/CSS 页面结构;
+    
+    |后台系统|
+    -->
+    
+    |用户|
+    :可修改后保存;
+    
+    |后台系统|
+    :自动生成路径，如 `/ai-page`;
+    note right #FFF9C4: 页面管理支持：\n预览 / 编辑 / 删除 / 发布
+split again
+    |用户|
+    #D1C4E9:**创建自定义单页**;
+    :选择"自定义单页";
+    :输入原始 HTML / Markdown / JSON 内容;
+    
+    |后台系统|
+    #EDE7F6:实时预览渲染效果;
+    
+    |用户|
+    :保存后可直接访问;
+    
+    |后台系统|
+    note right #FFF9C4: 页面管理支持：\n预览 / 编辑 / 删除 / 发布
+split again
+    |用户|
+    #FFCCBC:**AI 助手模块**;
+    :导入大模型 API;
+    :配置角色提示词;
+    
+    |后台系统|
+    #FBE9E7:调用AI服务;
+    
+    |AI 服务模块|
+    #FBE9E7:处理请求并返回结果;
+    
+    |后台系统|
+    :支持快速生成文案、内容片段，\n供单页编辑使用;
+split again
+    |用户|
+    #FFE0B2:**页面配置模块**;
+    :设置站点主题样式\n（字体/色彩/深浅色）;
+    :配置头部导航栏 / 侧边栏内容 / \n首页默认跳转页;
+    
+    |后台系统|
+    #FFF3E0:保存站点配置;
+end split
+
+|后台系统|
+#B3E5FC:所有单页均注册路径并保存;
+
+|前台展示系统|
+#FFECB3:前台路由渲染、上线;
+
+|用户|
+:用户访问 https://xxx.com/xxx;
+stop
+
+caption 单页管理系统工作流程图
+
+@enduml
